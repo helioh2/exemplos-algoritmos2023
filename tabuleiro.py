@@ -42,7 +42,8 @@ def tabuleiro(tamanho: int, cor1: str, cor2: str) -> pg.Surface:
 tela = criar_tela_base(500, 500) 
 
 tab1 = tabuleiro(400, "gray", "black")
-
+tab2 = tabuleiro(200, "blue", "green")
+tab3 = tabuleiro(50, "green", "white")
 """
 Outros testes:
 
@@ -61,5 +62,5 @@ circulos = quatro_imagens(circulo1)
 quadrado_circulo = lado(circulo1, quadrado1)
 """
 
-
-colocar_imagem_sobre_tela_e_mostrar(tab1, 500//2, 500//2)
+p1 = padrao_xadrez(400, "red", "black")
+colocar_imagem_sobre_tela_e_mostrar(tab3, 500//2, 500//2)

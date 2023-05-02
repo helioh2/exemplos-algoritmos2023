@@ -4,7 +4,7 @@ import random
 wn = turtle.Screen()
 alex = turtle.Turtle()
 
-angulos = [random.randrange(-360, 361) for i in range(10)]
+angulos = [10,67,93,-156,332,-40]
 
 print(angulos)
 
