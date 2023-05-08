@@ -17,7 +17,7 @@ Programa: imprimir todos os números da P.G. na base 2:
 """
 def imprime_exp_2(n):
     for i in range(0, n+1):
-        print("2**", i, "=", 2**i, sep="")
+        print("2**", i, "=", 2**i, sep="")  #sep serve para não colocar espaços onde tem vírgula no print
 
 
 """ NUMEROS PARES DE O A 100
