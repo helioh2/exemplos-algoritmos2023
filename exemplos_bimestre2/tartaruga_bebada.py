@@ -33,6 +33,9 @@ alex = turtle.Turtle()
 wn = turtle.Screen()
 
 alex.shape('turtle')
+
+contagem = 0  #inicialização
+
 while estaNaTela(wn, alex):
     moeda = random.randrange(0,2)
     if moeda == 0:              # cara
@@ -41,5 +44,11 @@ while estaNaTela(wn, alex):
         alex.right(90)
 
     alex.forward(50)
+
+    contagem += 1  #incremento (ex: 1 -> 2; 2 -> 3)
+
+    print(contagem)
+
+print(contagem)
 
 wn.exitonclick()
