@@ -32,17 +32,17 @@ def eh_triangulo_retangulo_chique(a: float, b: float, c: float) -> bool:
 
     soma_quadrado_dos_catetos = sum(lado**2 for lado in lados)  #faz a somatório do quadrado dos lados da lista (os catetos)
 
-    return abs(soma_quadrado_dos_catetos - hipo**2) < 0.000001
+    return abs(soma_quadrado_dos_catetos - hipo**2) < 0.000001  # é possível retornar diretamente, sem fazer o if, pois a comparação já retorna o valor booleano desejado
 
 
 
 ##TESTES
-assert eh_triangulo_retangulo_raiz(4,3,5)
+assert eh_triangulo_retangulo_raiz(4,3,5) #dá erro se resultado retornar False
 assert eh_triangulo_retangulo_raiz(3,4,5)
 assert eh_triangulo_retangulo_raiz(3,5,4)
 assert eh_triangulo_retangulo_raiz(5,4,3)
 
-assert not eh_triangulo_retangulo_raiz(4,4,4)
+assert not eh_triangulo_retangulo_raiz(4,4,4) #dá erro se resultado retornar True
 assert not eh_triangulo_retangulo_raiz(1,2,3)
 assert not eh_triangulo_retangulo_raiz(3,1,2)
 
