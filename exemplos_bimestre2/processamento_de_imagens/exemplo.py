@@ -16,9 +16,9 @@ win = image.ImageWin(img.getWidth(), img.getHeight())
 img.draw(win)
 img.setDelay(1,15)   # setDelay(0) turns off animation
 
-for row in range(img.getHeight()):
+for lin in range(img.getHeight()):
     for col in range(img.getWidth()):
-        p = img.getPixel(col, row)
+        p = img.getPixel(col, lin)
 
         newred = 255 - p.getRed()
         newgreen = 255 - p.getGreen()
@@ -26,7 +26,7 @@ for row in range(img.getHeight()):
 
         newpixel = image.Pixel(newred, newgreen, newblue)
 
-        img.setPixel(col, row, newpixel)
+        img.setPixel(col, lin, newpixel)
 
 
 img.draw(win)
