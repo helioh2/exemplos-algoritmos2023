@@ -36,7 +36,7 @@ def redimensionar_imagem(img: image.Image, proporcao: float) -> image.Image:
 
 img = image.Image(os.path.join(os.getcwd(), "luther.jpg"))
 
-proporcao = 0.5
+proporcao = 4
 
 win = image.ImageWin(img.getWidth()*proporcao, img.getHeight()*proporcao)
 

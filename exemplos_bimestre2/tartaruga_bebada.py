@@ -36,7 +36,7 @@ alex.shape('turtle')
 
 contagem = 0  #inicialização
 
-while estaNaTela(wn, alex):
+while estaNaTela(wn, alex):  ## dica ex4: contagem < 4
     moeda = random.randrange(0,2)
     if moeda == 0:              # cara
         alex.left(90)
@@ -45,6 +45,7 @@ while estaNaTela(wn, alex):
 
     alex.forward(50)
 
+    # dica ex4: se not estaNaTela(wn, alex) -> contagem += 1; dar meia volta
     contagem += 1  #incremento (ex: 1 -> 2; 2 -> 3)
 
     print(contagem)

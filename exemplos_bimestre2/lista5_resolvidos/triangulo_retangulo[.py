@@ -1,15 +1,15 @@
 
 def eh_triangulo_retangulo_raiz(a: float, b: float, c: float) -> bool:
 
-    if (a >= b and a >= c):
+    if (a > b and a > c):
         hipo = a
         cat1 = b
         cat2 = c
-    elif (b >= a and b >= c):
+    elif (b > a and b > c):
         hipo = b
         cat1 = a
         cat2 = c
-    elif (c >= a and c >= b):
+    elif (c > a and c > b):
         hipo = c
         cat1 = a
         cat2 = b
