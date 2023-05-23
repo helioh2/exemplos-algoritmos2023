@@ -13,7 +13,7 @@ sala_anterior = None
 # saiu = False  # inicializando a variavel com valor False
 dentro = True
 
-while dentro:  #alternativa: if not saiu (necessário inicializar e modificar a variável 'saiu')
+while dentro:  #alternativa: while not saiu (necessário inicializar e modificar a variável 'saiu')
 
     escolha = input("Escolha a porta pela qual vc vai passar (norte, sul, leste ou oeste): ")
 

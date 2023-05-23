@@ -2,7 +2,6 @@
 
 
 
-
 def print_numeros_triangulares(n:int):
 
     i = 1  # valor inicial da variavel de laco

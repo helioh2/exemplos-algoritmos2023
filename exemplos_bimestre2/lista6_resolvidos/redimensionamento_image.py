@@ -18,14 +18,16 @@ def redimensionar_imagem(img: image.Image, proporcao: float) -> image.Image:
     nova_altura = math.floor(altura_original * proporcao)  #math.floor arredonda o numero para baixo
     nova_largura = math.floor(largura_original * proporcao)
 
-    nova_imagem = image.EmptyImage(nova_largura, nova_altura)
+    nova_imagem = image.EmptyImage(nova_largura, nova_altura)  # nova imagem vazia
 
     for lin in range(nova_altura):
         for col in range(nova_largura):
-            lin_antiga = math.floor(lin / proporcao) #cálculo reverso à proporção, para pegar o pixel do original
-            col_antiga = math.floor(col / proporcao)
-            pixel_antiga = img.get_pixel(col_antiga, lin_antiga)
-            nova_imagem.set_pixel(col, lin, pixel_antiga)
+             #cálculo reverso à proporção, para pegar o pixel do original.
+             # ex: se proporcao=2, e (lin, col) = (4,8), preciso pegar (lin_original, col_original) = (2,4)
+            lin_original = math.floor(lin / proporcao)
+            col_original = math.floor(col / proporcao)
+            pixel_original = img.get_pixel(col_original, lin_original) # pega pixel da imagem original
+            nova_imagem.set_pixel(col, lin, pixel_original)  # atribui pixel da original à imagem nova
 
     return nova_imagem
 

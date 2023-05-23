@@ -1,6 +1,5 @@
 
 
-
 """
 Um numero eh primo se ele for divisivel
 apenas por 1 e por ele mesmo.
@@ -10,18 +9,15 @@ por outro e o resto da zero
 """
 
 
-
 def eh_primo(x: int) -> bool:
     
-    ## x // n
-
-    n = x // 2  #ex; se for x=13, entao n=6
+    n = x // 2  #ex: se for x=12, entao n=6
 
     while n != 1 and x%n != 0:  #   not (n == 1 or x % n == 0)
         # enquando n!=1 e x nao eh dividivel por n, continua testando
         n = n - 1
 
-    if n == 1: # testei todos e nao foi divisivel por nenhum
+    if n == 1: # se testei todos e nao foi divisivel por nenhum
         return True
     else:
         return False
@@ -31,8 +27,8 @@ def eh_primo(x: int) -> bool:
 # print(eh_primo(4))  # --> False
 # print(eh_primo(13))  # --> True
 
-assert eh_primo(4) == False
-assert eh_primo(13) == True
+assert eh_primo(4) == False   # chama a função com x=4 e verifica se retornou False
+assert eh_primo(13) == True  # chama a função com x=13 e verifica se retornou True
 assert eh_primo(182) == False
 assert eh_primo(104729) == True
 

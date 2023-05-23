@@ -14,7 +14,7 @@ def rotacao_90(img: image.Image) -> image.Image:
     altura_original = img.get_height()
     largura_original = img.get_width()
 
-    nova_altura = largura_original
+    nova_altura = largura_original   #nova imagem tem altura e largura trocados
     nova_largura = altura_original
 
     nova_imagem = image.EmptyImage(nova_largura, nova_altura)
@@ -34,7 +34,7 @@ def rotacao(img: image.Image, angulo) -> image.Image:
     #else
     return img  #não altera
 
-    ##TODO fazer p/ outros angulos (180 e 270)
+    ##TODO (por fazer) fazer p/ outros angulos (180 e 270)
 
 ##PROGRAMA PRINCIPAL
 
