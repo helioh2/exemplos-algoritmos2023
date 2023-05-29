@@ -20,7 +20,6 @@ def remover_vogais(string: str) -> str:
 
 
 
-
 ### TESTES / EXEMPLOS DE USO
 
 print(remover_vogais("compsci"))  # -> "cmpsc"

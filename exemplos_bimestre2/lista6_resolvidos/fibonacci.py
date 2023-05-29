@@ -25,17 +25,18 @@ def fibonacci(n: int):
     if n < 2:
         return
     
-    print(b)
+    print(b) # segundo elemento
 
+    # a partir do terceiro elemento, faz um loop realizando a soma dos dois elementos atuais e reatribuições
     cont = 2
     while cont < n:
-        aux = a
-        a = b
-        b = aux + b
+        aux = a   # guarda o valor de 'a' em uma variável auxiliar (temporária)
+        a = b     # variável 'a' recebe o valor da variável 'b'
+        b = aux + b   # faz a soma de 'b' mais o valor anterior de 'a', que havia sido armazenada na variável auxiliar
         cont += 1
         print(b)
 
 
 ## PROGRAMA PRINCIPAL
 
-fibonacci(8)
+fibonacci(20)
