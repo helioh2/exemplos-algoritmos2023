@@ -8,9 +8,9 @@ def remover_vogais(string: str) -> str:
     vogais = "aeiouAEIOU"
     resultado = ""  #acumulador
 
-    for idx in range(0, len(string)):
+    for pos in range(0, len(string)):
 
-        char = string[idx]
+        char = string[pos]
 
         if not(char in vogais):  # if not (char == "a" or char=="b"....)
             resultado = resultado + char
@@ -19,6 +19,7 @@ def remover_vogais(string: str) -> str:
     return resultado
 
 
+print(remover_vogais("banana"))
 
 ### TESTES / EXEMPLOS DE USO
 

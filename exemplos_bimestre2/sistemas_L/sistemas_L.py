@@ -5,16 +5,7 @@ Desenvolver um sistema-L.
 """
 
 def aplica_regras(caracter_atual: str) -> str:
-    if caracter_atual == "A":
-        ## trocar por B
-        # string[indice] = "B"  #não dá pra fazer isso com string, pois string é um tipo de dado imutável
-        return "B"
-    elif caracter_atual == "B":
-        ## trocar por AB
-        return "AB"
-    else:
-        ## nao troca nada
-        return caracter_atual
+    
 
 
 def transforma(string: str) -> str:
@@ -23,7 +14,19 @@ def transforma(string: str) -> str:
 
     for indice in range(0, len(string)): # 0, 1, 2, 3...
         caracter_atual = string[indice]  # string[0], string[1], string[2]
-        resultado = resultado + aplica_regras(caracter_atual)
+
+        if caracter_atual == "A":
+            ## "trocar" por B
+            # string[indice] = "B"  # não dá pra fazer isso com string, pois string é um tipo de dado imutável
+            ## Portanto, na verdade não atualizamos a string original, mas sim 
+            ## adicionamos o caracter correto a uma nova string chamada resultado
+            resultado += "B"
+        elif caracter_atual == "B":
+            ## "trocar" por AB
+            resultado += "AB"
+        else:
+            ## nao "troca" nada
+            resultado += caracter_atual
 
     return resultado
 #end transforma

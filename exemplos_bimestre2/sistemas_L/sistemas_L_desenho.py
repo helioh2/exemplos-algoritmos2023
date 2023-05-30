@@ -9,11 +9,8 @@ import turtle
 
 def aplica_regras(caracter_atual: str) -> str:
     if caracter_atual == "F":
-        ## trocar por B
-        # string[indice] = "B"  #não dá pra fazer isso com string, pois string é um tipo de dado imutável
         return "F-F++F-F"
     else:
-        ## nao troca nada
         return caracter_atual
 
 
@@ -56,8 +53,6 @@ def desenha_sistema_L(tart: turtle.Turtle, axioma: str, num_iters: int):
             tart.right(60)
         
         
-
-## TESTES (A IDEIA É QUE IRÁ PASSAR QUANDO EU COMPLETAR A FUNÇÃO)
 
 print(criar_sistema_L("F", 6))
 
