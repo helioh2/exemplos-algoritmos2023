@@ -8,8 +8,10 @@ import turtle
 
 
 def aplica_regras(caracter_atual: str) -> str:
-    if caracter_atual == "F":
-        return "F-F++F-F"
+    if caracter_atual == "X":
+        return "X+YF+"
+    elif caracter_atual == "Y":
+        return "-FX-Y"
     else:
         return caracter_atual
 
@@ -36,32 +38,35 @@ def criar_sistema_L(axioma: str, num_iters: int) -> str:
     return string_atual
 
 
-def desenha_sistema_L(tart: turtle.Turtle, axioma: str, num_iters: int):
-
-    sistema = criar_sistema_L(axioma, num_iters)
+def desenha_sistema_L(tart: turtle.Turtle, sistema: str, angulo: float, distancia: int):
 
     for indice in range(len(sistema)):
         caracter_atual = sistema[indice]
 
         if caracter_atual == "F":
-            tart.forward(9)
+            tart.forward(distancia)
         if caracter_atual == "B":
-            tart.backward(9)
+            tart.backward(distancia)
         elif caracter_atual == "-":
-            tart.left(60)
+            tart.left(angulo)
         elif caracter_atual == "+":
-            tart.right(60)
+            tart.right(angulo)
         
         
 
-print(criar_sistema_L("F", 6))
+# print(criar_sistema_L("F", 6))
 
 alex = turtle.Turtle()
 wn = turtle.Screen()
 
+alex.speed(0)
+
 alex.penup()
 alex.backward(wn.window_width()/2+20)
 alex.pendown()
-desenha_sistema_L(alex, "F", 10)
+
+sistema = criar_sistema_L("FX", 10)
+print(sistema)
+desenha_sistema_L(alex, sistema, 90, 9)
 
 wn.exitonclick()

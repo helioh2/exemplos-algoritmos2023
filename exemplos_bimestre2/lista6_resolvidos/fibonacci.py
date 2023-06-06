@@ -15,14 +15,14 @@ def fibonacci(n: int):
     """
 
     if n < 1:
-        return
-
-    a = 0
-    b = 1
+        return   # interrompe / termina a execução da função
+    
+    a = 0   # anterior do anterior
+    b = 1   # anterior
 
     print(a)  # primeiro elemento
 
-    if n < 2:
+    if n == 1:  # n < 2
         return
     
     print(b) # segundo elemento
@@ -30,13 +30,20 @@ def fibonacci(n: int):
     # a partir do terceiro elemento, faz um loop realizando a soma dos dois elementos atuais e reatribuições
     cont = 2
     while cont < n:
-        aux = a   # guarda o valor de 'a' em uma variável auxiliar (temporária)
-        a = b     # variável 'a' recebe o valor da variável 'b'
-        b = aux + b   # faz a soma de 'b' mais o valor anterior de 'a', que havia sido armazenada na variável auxiliar
+    # for cont in range(2, n):
+        # aux = a   # guarda o valor de 'a' em uma variável auxiliar (temporária)
+        # a = b     # variável 'a' recebe o valor da variável 'b'
+        # b = aux + b   # faz a soma de 'b' mais o valor anterior de 'a', que havia sido armazenada na variável auxiliar
+        
+        b_antigo = b
+        b = a + b
+        a = b_antigo
+
         cont += 1
+
         print(b)
 
 
 ## PROGRAMA PRINCIPAL
 
-fibonacci(20)
+fibonacci(8)
