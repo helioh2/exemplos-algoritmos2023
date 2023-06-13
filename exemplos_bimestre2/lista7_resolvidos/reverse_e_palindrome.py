@@ -19,6 +19,18 @@ def reverse(palavra: str) -> str:
     return resultado
 
 
+def reverse_alt(texto):
+    """
+    Outra solução, adaptado da aluna Isabela
+    """
+    n = len(texto)
+    texto_invertido = ""
+    for pos in range(0, n):
+        caracter = texto[pos]
+        texto_invertido = caracter + texto_invertido  # concatena o caracter antes do texto resultante
+
+    return texto_invertido
+
 
 def palindrome(palavra: str) -> bool:
     if reverse(palavra) == palavra:
