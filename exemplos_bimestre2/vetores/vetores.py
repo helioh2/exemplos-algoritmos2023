@@ -12,7 +12,9 @@ def adiciona_no_final(vetor: list, item):
 
     ## descobrir qual a primeira posição vazia
     indice = 0
-    while indice < len(vetor) and vetor[indice] != None:
+    
+    esta_dentro_do_vetor = indice < len(vetor)
+    while esta_dentro_do_vetor and vetor[indice] != None:
         indice += 1   # andando "pra frente"
 
     ## fora do while

@@ -30,7 +30,7 @@ def remover_do_meio(vetor, indice):
 
 
 n = 6
-vetor = [10, 30, 40, 50, 60, None]
+vetor = [10, 30, 40, 50, 60, None]  # vetor, lista estática
 
 inserir_no_meio(vetor, 20, 1)
 
