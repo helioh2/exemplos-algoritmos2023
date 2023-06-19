@@ -9,7 +9,7 @@ import os
 import image
 
 
-def rotacao_90(img: image.Image) -> image.Image:
+def rotacao_90_a_esquerda(img: image.Image) -> image.Image:
     
     altura_original = img.get_height()
     largura_original = img.get_width()
@@ -18,19 +18,26 @@ def rotacao_90(img: image.Image) -> image.Image:
     nova_largura = altura_original
 
     nova_imagem = image.EmptyImage(nova_largura, nova_altura)
+    print(nova_imagem.get_height())
+    print(nova_imagem.get_width())
 
-    for lin in range(nova_altura):
-        for col in range(nova_largura):
-            pixel_antiga = img.get_pixel(lin, col)  #pixel com lin e col "invertidos"
-            nova_imagem.set_pixel(col, lin, pixel_antiga)
+    for lin in range(altura_original):
+        for col in range(largura_original):
+            #pegadinha: img.get_pixel recebe na ordem x, y (col, lin)
+            pixel_antiga = img.get_pixel(x=col, y=lin)  
+            nova_imagem.set_pixel(x=lin, y=largura_original-col-1, pixel=pixel_antiga)  
 
     return nova_imagem
 
 
-def rotacao(img: image.Image, angulo) -> image.Image:
+def rotacao_esquerda(img: image.Image, angulo) -> image.Image:
     if angulo == 90:
-        return rotacao_90(img)
-    
+        return rotacao_90_a_esquerda(img)
+    if angulo == 180:
+        return rotacao_90_a_esquerda(rotacao_90_a_esquerda(img))  # é possível fazer de forma mais eficiente
+    if angulo == 270:
+        return rotacao_90_a_esquerda(rotacao_90_a_esquerda(rotacao_90_a_esquerda(img))) # é possível fazer de forma mais eficiente
+                                     
     #else
     return img  #não altera
 
@@ -42,7 +49,7 @@ img = image.Image(os.path.join(os.getcwd(), "luther.jpg"))
 
 win = image.ImageWin(max(img.getHeight(), img.getWidth()), max(img.getHeight(), img.getWidth()))
 
-img = rotacao(img)
+img = rotacao_esquerda(img, 270)
 
 img.draw(win)
 
