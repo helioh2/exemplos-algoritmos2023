@@ -7,6 +7,10 @@
 */
 void adicionar(int valor, int pos, int vetor[], int n){  // vetor é passado por referência (ponteiro)
 
+    if (vetor[n-1] != 0){
+        printf("ERRO: LISTA CHEIA\n");
+        return;  // termina
+    }
     // Deslocando os valores para frente
     for (int i = n-2; i >= pos; i--){  //começa no penúltimo e vai até pos, de traz pra frente
         vetor[i+1] = vetor[i];   // passa o de trás (i) para o da frente (i+1)

@@ -28,6 +28,32 @@ def soma_matrizes(m1:list[list], m2:list[list]) -> list[list]:
     
 
 
+
+
+def soma_matrizes_alt(m1:list[list], m2:list[list]) -> list[list]:
+
+    linhas_m1 = len(m1)
+    colunas_m1 = len(m1[0])
+
+    linhas_m2 = len(m2)
+    colunas_m2 = len(m2[0])
+
+    if linhas_m1 == linhas_m2 and colunas_m1 == colunas_m2:
+        
+        ## se tiverem dimensões iguais, continua:
+
+        res = cria_matriz_vazia(linhas_m1, colunas_m1)
+
+        for lin in range(0, linhas_m1):
+            for col in range(0, colunas_m1):
+                res[lin][col] = m1[lin][col] + m2[lin][col]
+
+        return res
+    
+    #"else"
+    print("ERRO: matrizes com dimensões diferentes")
+    return None
+
 ## TESTES
 
 m1 = [[1,2],

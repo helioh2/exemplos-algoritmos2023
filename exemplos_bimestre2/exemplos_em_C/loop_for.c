@@ -2,9 +2,21 @@
 #include <stdio.h>
 
 /* ESTRUTURA DO COMANDO FOR
+
+Considerando uma variável de laço chamada i:
+Estrutura do FOR em pseudocódigo (português):
+
+para cada valor i entre INICIO e FIM com passo PASSO:
+	... FAZ ALGUMA COISA
+
+
+Em C, o for tem a seguinte estrutura genérica:
+
 for (inicialização da variavel; condição de continuidade; incremento) {
   // corpo do código a ser executado
 }
+
+Colocando em modelo similar ao pseudocódigo (com INICIO, FIM e PASSO):
 
 // Considerando uma variável de laço chamada i:
 for (int i = INICIO; i < FIM+1; i += PASSO) {

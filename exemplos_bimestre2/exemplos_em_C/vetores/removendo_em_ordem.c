@@ -9,6 +9,10 @@ void remover(int pos, int vetor[], int n){  // vetor é passado por referência 
 
     // Deslocando os valores para trás
     for (int i = pos; i < n-1; i++){ // começa em pos e vai até o penultimo elemento
+        
+        if (vetor[pos] == 0) {  // se encontrar vazio (0), nada mais a fazer
+            return;   // cabou
+        }
         vetor[i] = vetor[i+1];  // passa o da frente para o atual
     }
 

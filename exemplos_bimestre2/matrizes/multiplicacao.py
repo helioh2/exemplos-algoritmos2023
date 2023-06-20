@@ -4,37 +4,47 @@
 from matrizes import cria_matriz_vazia, print_matriz
 
 
-def multiplicacao_matrizes(matriz1: list[list], matriz2: list[list]) -> list[list]:
+def multiplicacao_matrizes(m1: list[list], m2: list[list]) -> list[list]:
 
-    linhas_m1 = len(matriz1)   # I
-    colunas_m1 = len(matriz1[0])  # K
+    linhas_m1 = len(m1)
+    colunas_m1 = len(m1[0])
 
-    linhas_m2 = len(matriz2)   # K
-    colunas_m2 = len(matriz2[0])   # J
+    linhas_m2 = len(m2)
+    colunas_m2 = len(m2[0])
 
-    if colunas_m1 != linhas_m2:
-        return "Não é possível multiplicar essas matrizes"
-
-
-    resultado = cria_matriz_vazia(linhas_m1, colunas_m2, valor_padrao=0)
-
-    # Ver fórmula da mult de matrizes: https://pt.wikipedia.org/wiki/Produto_de_matrizes
+    if colunas_m1 != linhas_m2:  # não dá certo
+        print("ERRO: matrizes incompatíveis para multiplicação")
+        return None
     
-    for i in range(0, linhas_m1):
-        for j in range(0, colunas_m2):
+    #"else"
 
-            for k in range(0, colunas_m1):  # ou linhas_m2
-                resultado[i][j] += matriz1[i][k] * matriz2[k][j]
+    res = cria_matriz_vazia(linhas_m1, colunas_m2)
 
-    return resultado 
+    for lin in range(0, linhas_m1):
+        for col in range(0, colunas_m2):
+            res[lin][col] = 0  #inicializa posição na resultante com 0, pra fazer a soma
+            for k in range(0, colunas_m1): #ou linhas_m2
+                res[lin][col] += m1[lin][k] * m2[k][col]
+
+    return res
+
+
+
+   
 
 
 
 
 A = [[1, 2, 3],
-     [4, 5, 6]]
-B = [[1, 4],
-     [2, 5],
-     [3, 6]]
+     [4, 5, 6]]   #2x3
+
+B = [[10, 40],
+     [20, 50],
+     [30, 60]]   #3x2
+
+
+C = [[140, 320],
+     [320, 770]]   #2x2
 
 print_matriz(multiplicacao_matrizes(A, B))
+assert multiplicacao_matrizes(A,B) == C
