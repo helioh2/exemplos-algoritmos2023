@@ -19,7 +19,23 @@ def reverse(palavra: str) -> str:
     return resultado
 
 
-def reverse_alt(texto):
+def reverse_alt2(texto):
+
+    n = len(texto)
+
+    resultado = ""
+
+    for pos in range(0, n):
+        indice_reverso = n-pos-1
+        caracter_atual = texto[indice_reverso]
+
+        resultado = resultado + caracter_atual
+
+    return resultado
+
+
+
+def reverse_alt3(texto):
     """
     Outra solução, adaptado da aluna Isabela
     """
@@ -90,3 +106,6 @@ print(palindrome("arara"))
 
 print(palindrome_sem_reverse("banana"))
 print(palindrome_sem_reverse("arara"))
+
+
+print(reverse_alt2("banana"))
